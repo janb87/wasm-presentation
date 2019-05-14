@@ -1,1 +1,8 @@
 node_modules
+dist
+node_modules
+example/crate/bin
+example/crate/pkg
+example/crate/target
+example/crate/wasm-pack.log
+example/crate/Cargo.lock
