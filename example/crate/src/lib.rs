@@ -18,16 +18,13 @@ pub fn run() -> Result<(), JsValue> {
 
     let window = web_sys::window().expect("should have a Window");
     let document = window.document().expect("should have a Document");
-
-    let now = js_sys::Date::now();
-    let now_date = js_sys::Date::new(&JsValue::from_f64(now));
+    
     let p = document.create_element("p").unwrap();
-    p.set_inner_html(&format!(
-        "Hello World! It is {}:{}", 
-        now_date.get_hours(),
-        now_date.get_minutes(),
-    ));
+    p.set_attribute("id", "clock");
     document.body().unwrap().append_child(&p);
+    update_time_internal();
+
+    // window.set_interval_with_callback_and_timeout_and_arguments_0(&update_time, 1_000);
 
     Ok(())
 }
@@ -37,6 +34,27 @@ fn set_panic_hook() {
     // `set_panic_hook` function to get better error messages if we ever panic.
     #[cfg(feature = "console_error_panic_hook")]
     console_error_panic_hook::set_once();
+}
+
+fn update_time_internal() -> () {
+    let now = js_sys::Date::now();
+    let now_date = js_sys::Date::new(&JsValue::from_f64(now));
+
+    let window = web_sys::window().expect("should have a Window");
+    let document = window.document().expect("should have a Document");
+    let el = document.get_element_by_id("clock").unwrap();
+
+    el.set_inner_html(&format!(
+        "Hello World! It is {}:{}:{}", 
+        now_date.get_hours(),
+        now_date.get_minutes(),
+        now_date.get_seconds(),
+    ));
+}
+
+#[wasm_bindgen]
+pub fn update_time() -> () { 
+    update_time_internal();
 }
 
 #[wasm_bindgen]
