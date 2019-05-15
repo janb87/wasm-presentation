@@ -227,16 +227,19 @@
 			color: #fff;
 		}
 	</style>
-	<script src="https://remarkjs.com/downloads/remark-latest.min.js">
-	</script>
 </head>
 
 <body>
 	<textarea id="source">
+
     </textarea>
+	<script src="https://remarkjs.com/downloads/remark-latest.min.js">
+	</script>
 	<script>
-		var slideshow = remark.create({
-			sourceUrl: 'slideshow.md'
+		window.addEventListener('DOMContentLoaded', function () {
+			var slideshow = remark.create({
+				sourceUrl: 'slideshow.md'
+			});
 		});
 	</script>
 </body>
