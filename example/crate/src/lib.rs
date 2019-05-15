@@ -78,7 +78,7 @@ impl Image {
             blue: 0,
         };
         let color2 = Color {
-            red: 0,
+            red: 200,
             green: 200,
             blue: 80,
         };

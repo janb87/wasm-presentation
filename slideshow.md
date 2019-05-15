@@ -13,7 +13,7 @@ Jan Bevers
 
 1. What is WebAssembly?
 2. How WebAssembly works compared to JavaScript
-3. Stuff I've tried already
+3. My first lines of code
 4. Performance Benchmarks
 5. Ecosystem
 6. Discussions / questions
@@ -84,9 +84,9 @@ Each browser has its own engine:
 3. Edge has Chakra
 4. Firefox has SpiderMonkey
 
---
+---
 
-# Stuff I've tried already
+#  My first lines of code
 
 <img style="width: 350px; margin: 0 auto" src="./images/programming_meme.jpg_large"/>
 
@@ -109,7 +109,10 @@ Mobile Chrome is about 60% faster, mobile and desktop Firefox is insanely faster
     1. **asm-dom** - A minimal WebAssembly virtual DOM to build C++ SPA
     2. **Blazor** - Microsoft's web UI framework using C#/Razor and HTML, running client-side via WebAssembly
     3. **Yew** - Rust framework for making client web apps
-    4. ...
+
+---
+
+# Ecosystem
 
 [Extended list](https://github.com/mbasso/awesome-wasm)
 
