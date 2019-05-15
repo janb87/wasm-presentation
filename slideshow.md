@@ -9,7 +9,7 @@ Jan Bevers
 
 # Agenda
 
-<img src="./images/vue-meme.png" style="float:right; width: 200px"/>
+<img src="./images/vue-meme.png" style="float:right; width: 300px"/>
 
 1. What is WebAssembly?
 2. How WebAssembly works compared to JavaScript
@@ -45,6 +45,8 @@ WebAssembly gives us <strong>access to a set of low level building blocks</stron
 The most obvious use cases are <strong>Games, VR and augmented reality</strong>. Most of the current WebAssembly demos use Unity or Unreal Engine, both of which already support compiling to asm.js.
 </p>
 
+<iframe src="https://giphy.com/embed/OrB0Ruvuy7kIw" width="240" height="160" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+
 ---
 
 # How WebAssembly works compared to JavaScript
@@ -73,6 +75,17 @@ The most obvious use cases are <strong>Games, VR and augmented reality</strong>.
 
 ---
 
+# How WebAssembly works compared to JavaScript
+
+Each browser has its own engine:
+
+1. Chrome has V8
+2. Safari has JavaScriptCore (JSC)
+3. Edge has Chakra
+4. Firefox has SpiderMonkey
+
+--
+
 # Stuff I've tried already
 
 <img style="width: 350px; margin: 0 auto" src="./images/programming_meme.jpg_large"/>
@@ -81,22 +94,24 @@ The most obvious use cases are <strong>Games, VR and augmented reality</strong>.
 
 # Performance benchmarks
 
-https://medium.com/@torch2424/webassembly-is-fast-a-real-world-benchmark-of-webassembly-vs-es6-d85a23f8e193
+“Wasm is about 30% faster than asm.js / JavaScript”. On desktop chrome, this is mostly true!
 
-https://wasmboy.app/
+Mobile Chrome is about 60% faster, mobile and desktop Firefox is insanely faster by about 90%, mobile and desktop Safari is only bit faster by about 20%.
+
+[More info](https://medium.com/@torch2424/webassembly-is-fast-a-real-world-benchmark-of-webassembly-vs-es6-d85a23f8e193)
 
 ---
 
 # Ecosystem
 
-1. Languages: Go, Kotlin, OCAML, Python, Rust, AssemblyScript, ...
+1. Languages: **Go, Kotlin, OCAML, Python, Rust, AssemblyScript, ...**
 2. Frameworks: 
-    1. asm-dom - A minimal WebAssembly virtual DOM to build C++ SPA
-    2. Blazor - Microsoft's web UI framework using C#/Razor and HTML, running client-side via WebAssembly
-    3. Yew - Rust framework for making client web apps
+    1. **asm-dom** - A minimal WebAssembly virtual DOM to build C++ SPA
+    2. **Blazor** - Microsoft's web UI framework using C#/Razor and HTML, running client-side via WebAssembly
+    3. **Yew** - Rust framework for making client web apps
     4. ...
 
-[More](https://github.com/mbasso/awesome-wasm)
+[Extended list](https://github.com/mbasso/awesome-wasm)
 
 ---
 
@@ -112,3 +127,4 @@ Still awake?
 
 1. [What is WebAssembly?](https://medium.com/javascript-scene/what-is-webassembly-the-dawn-of-a-new-era-61256ec5a8f6)
 2. [Blazor, Razor, WebAssembly, and Mono](https://daveaglick.com/posts/blazor-razor-webassembly-and-mono)
+3. [Calls between JavaScript and WebAssembly are finally fast 🎉](https://hacks.mozilla.org/2018/10/calls-between-javascript-and-webassembly-are-finally-fast-%F0%9F%8E%89/)
